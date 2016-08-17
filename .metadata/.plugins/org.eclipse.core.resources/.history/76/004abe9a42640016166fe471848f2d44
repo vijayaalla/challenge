@@ -1,0 +1,43 @@
+package com.vij.test;
+
+import static org.junit.Assert.*;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+
+public class WordCountTest {
+
+	@Test
+	public void wordCountinWithSingleWordMultipleTimesList() {
+		List<String> lstValues = Arrays.asList("Buzz", "2", "3", "4", "Buzz");
+		WordCount wc = new WordCount();
+		Map<String, Long>  result = wc.wordCountOnly(lstValues);
+		assertEquals(Long.valueOf(2), result.get("Buzz"));
+	}
+	
+	@Test
+	public void wordCountinWithMultipleWordMultipleTimesList() {
+		List<String> lstValues = Arrays.asList("1", "2", "homeoffice", "4", "Buzz");
+		WordCount wc = new WordCount();
+		Map<String, Long>  result = wc.wordCountOnly(lstValues);
+		assertEquals(Long.valueOf(1), result.get("homeoffice"));
+		assertEquals(Long.valueOf(1), result.get("Buzz"));
+	}
+	
+	@Test
+	public void wordCountinWithNullList() {
+		WordCount wc = new WordCount();
+		Map<String, Long>  result = wc.wordCountOnly(null);
+		assertNull(result);
+	}
+	
+	@Test
+	public void wordCountinWithEmptyList() {
+		WordCount wc = new WordCount();
+		Map<String, Long>  result = wc.wordCountOnly(null);
+		assertNull(result);
+	}
+}
