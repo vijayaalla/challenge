@@ -8,7 +8,7 @@ public class ReplaceWord {
 	public List<String> replaceThreeWithHomeOffice(List<String> lstValues) {
 		if(lstValues == null) return null;
 		return lstValues.stream()
-				 .map(e -> "3".equals(e) ? "homeoffice" : e)
+				 .map(e -> equals("3").e ? "homeoffice" : e)
 				 .collect(Collectors.toList());
 	}
 

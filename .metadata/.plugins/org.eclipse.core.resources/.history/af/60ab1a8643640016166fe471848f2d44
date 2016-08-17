@@ -38,21 +38,6 @@ public class ReplaceWordTest {
 
 	}
 
-	@Test
-	public void replaceWordThreeWithHomeOfficeWithOneElementNull() {
-		ReplaceWord rw = new ReplaceWord();
-		List<String> lstValues = Arrays.asList("1", "2", "3", null, "Buzz", "3");
-		List<String> lstResults = rw.replaceThreeWithHomeOffice(lstValues);
-		assertEquals("homeoffice", lstResults.get(2));
-		assertEquals("homeoffice", lstResults.get(5));
-		
-		assertNotEquals("homeoffice", lstResults.get(0));
-		assertNotEquals("homeoffice", lstResults.get(1));
-		assertNotEquals("homeoffice", lstResults.get(3));
-		assertNotEquals("homeoffice", lstResults.get(4));
-
-	}
-
 	
 	@Test
 	public void replaceWordThreeWithHomeOfficeWithNullInput() {

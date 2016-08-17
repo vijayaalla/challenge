@@ -41,7 +41,7 @@ public class ReplaceWordTest {
 	@Test
 	public void replaceWordThreeWithHomeOfficeWithOneElementNull() {
 		ReplaceWord rw = new ReplaceWord();
-		List<String> lstValues = Arrays.asList("1", "2", "3", null, "Buzz", "3");
+		List<String> lstValues = Arrays.asList("1", "2", "3", "4", "Buzz", "3");
 		List<String> lstResults = rw.replaceThreeWithHomeOffice(lstValues);
 		assertEquals("homeoffice", lstResults.get(2));
 		assertEquals("homeoffice", lstResults.get(5));
