@@ -1,0 +1,26 @@
+package com.vij.test;
+
+import java.text.NumberFormat;
+import java.text.ParsePosition;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class WordCount {
+
+	public Map<String, Long> wordCountOnly(List<String> lstValues) {
+		if (lstValues == null) {
+			return null;
+		}
+		return lstValues.stream().filter(x -> !isNumeric(x))
+				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+	}
+
+	public boolean isNumeric(String str) {
+		NumberFormat formatter = NumberFormat.getInstance();
+		ParsePosition pos = new ParsePosition(0);
+		formatter.parse(str, pos);
+		return str.length() == pos.getIndex();
+	}
+}
