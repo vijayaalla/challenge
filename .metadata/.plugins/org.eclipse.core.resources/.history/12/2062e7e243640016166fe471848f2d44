@@ -13,7 +13,7 @@ public class WordCount {
 		if (lstValues == null) {
 			return null;
 		}
-		return lstValues.stream().filter(x -> x!= null && !isNumeric(x))
+		return lstValues.stream().filter(x -> !isNumeric(x))
 				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 	}
 

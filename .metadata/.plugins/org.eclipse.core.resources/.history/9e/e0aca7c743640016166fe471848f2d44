@@ -31,16 +31,6 @@ public class WordCountTest {
 	}
 	
 	@Test
-	public void wordCountinWithMultipleWordWithNullValue() {
-		List<String> lstValues = Arrays.asList("1", null, "homeoffice", "4", "Buzz");
-		WordCount wc = new WordCount();
-		Map<String, Long>  result = wc.wordCountOnly(lstValues);
-		assertEquals(Long.valueOf(1), result.get("homeoffice"));
-		assertEquals(Long.valueOf(1), result.get("Buzz"));
-		assertEquals(2, result.size());
-	}
-	
-	@Test
 	public void wordCountinWithNullList() {
 		WordCount wc = new WordCount();
 		Map<String, Long>  result = wc.wordCountOnly(null);
